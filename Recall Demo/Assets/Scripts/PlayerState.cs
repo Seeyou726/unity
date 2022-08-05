@@ -118,6 +118,7 @@ public class JumpUpState : IState
 
     public void OnUpdate()
     {
+        playerFSM.PlayerGravity.GravitySimulate(playerFSM);
         parameter.jumpTimer += Time.deltaTime;
 
         if (parameter.jumpTimer<0.2f&&keyboardState.pressedJump)
@@ -172,6 +173,7 @@ public class JumpDownState : IState
 
     public void OnUpdate()
     {
+        playerFSM.PlayerGravity.GravitySimulate(playerFSM);
         if (!parameter.isGroud)
         {
             if (keyboardState.pressedRight)
@@ -214,6 +216,7 @@ public class JumpTopState : IState
 
     public void OnUpdate()
     {
+        playerFSM.PlayerGravity.GravitySimulate(playerFSM);
         if (!parameter.isGroud)
         {
             if (parameter.playerRigidbody.velocity.y >= 0)

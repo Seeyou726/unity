@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     public KeyBoardDetection PlayerKeyboardStates = new KeyBoardDetection();  //角色按键状态
     public PlayerParameter playerParameter = new PlayerParameter();  //角色参数
-    private Gravity PlayerGravity = new Gravity();  //重力模拟
+    public Gravity PlayerGravity = new Gravity();  //重力模拟
     public bool slow;
     public float slowSpeed=0.1f;
 
@@ -36,8 +36,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        PlayerGravity.GravitySimulate(this);
+    {       
         PlayerKeyboardStates.KeyDown();
 
         currentState.OnUpdate();
